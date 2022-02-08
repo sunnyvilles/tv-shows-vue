@@ -20,8 +20,8 @@ export const getDefaultState = () => {
     showListApiUrl: `${baseUrl}/shows`,
     searchApiUrl: `${baseUrl}/search/shows`,
     allShows: {},
-    selectedShow: {}, 
-  }
-}
+    selectedShow: {},
+  };
+};
 
 export default getDefaultState();

@@ -1,14 +1,12 @@
 <template>
-  <div class="home">
-    <ShowsSearch :onSearch="onSearch" v-model="searchTerm"/>
-    <ShowsList />
-  </div>
+  <ShowsSearch :onSearch="onSearch" v-model="searchTerm" />
+  <ShowsList />
 </template>
 
 <script>
 // @ is an alias to /src
-import ShowsSearch from "@/components/ShowsSearch.vue";
-import ShowsList from "@/components/ShowsList.vue";
+import ShowsSearch from "@/components/Shows/ShowsSearch.vue";
+import ShowsList from "@/components/Shows/ShowsList.vue";
 
 export default {
   name: "Home",
@@ -16,17 +14,17 @@ export default {
     ShowsSearch,
     ShowsList,
   },
-  data () {
-     return { 
-        searchTerm: "",
-     }
+  data() {
+    return {
+      searchTerm: "",
+    };
   },
-  methods:{
+  methods: {
     onSearch() {
-     if (!this.searchTerm) return;
+      if (!this.searchTerm) return;
       //this.$store.dispatch('resetState');
-      this.$store.dispatch('fetchSearchResults',this.searchTerm);
+      this.$store.dispatch("fetchSearchResults", this.searchTerm);
     },
-  }
+  },
 };
 </script>

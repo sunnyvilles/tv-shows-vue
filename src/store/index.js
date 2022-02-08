@@ -9,5 +9,5 @@ export default createStore({
   state,
   getters,
   mutations,
-  actions
+  actions,
 });

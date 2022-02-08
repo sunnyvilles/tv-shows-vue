@@ -11,8 +11,9 @@ const routes = [
     path: "/detail/:id",
     name: "Detail",
     // lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "detail" */"../views/Detail.vue"),
-    props:true
+    component: () =>
+      import(/* webpackChunkName: "detail" */ "../views/Detail.vue"),
+    props: true,
   },
 ];
 

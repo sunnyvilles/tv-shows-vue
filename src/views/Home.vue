@@ -1,7 +1,7 @@
 <template>
   <div class="home">
-    <ShowsSearch term="peaky blinders" />
-    <shows-list genre="drama" />
+    <ShowsSearch :onSearch="onSearch" v-model="searchTerm"/>
+    <ShowsList />
   </div>
 </template>
 
@@ -16,5 +16,17 @@ export default {
     ShowsSearch,
     ShowsList,
   },
+  data () {
+     return { 
+        searchTerm: "",
+     }
+  },
+  methods:{
+    onSearch() {
+     if (!this.searchTerm) return;
+      //this.$store.dispatch('resetState');
+      this.$store.dispatch('fetchSearchResults',this.searchTerm);
+    },
+  }
 };
 </script>

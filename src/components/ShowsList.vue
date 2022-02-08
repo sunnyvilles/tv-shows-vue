@@ -1,19 +1,23 @@
 <template>
-  <div class="hello">
-    <h1>{{ genre }}</h1>
-    <p>
-      Description
-    </p>
     <h3>List of available shows</h3>
-    
-  </div>
+    <ShowsByGenre v-for="(shows, genre, index) in getShowsListByGenre" :shows="shows" :genre="genre" :key="index"/>
 </template>
 
 <script>
+import ShowsByGenre from "@/components/ShowsByGenre.vue";
+
 export default {
-  name: "ShowsSearch",
-  props: {
-    genre: String,
+  name: "ShowsList",
+  components: {
+    ShowsByGenre,
+  },
+  computed :{
+    getShowsListByGenre(){
+      return this.$store.getters.getShowsListByGenre;
+    }
+  },
+  mounted(){ 
+    this.$store.dispatch('fetchAllShows');
   },
 };
 </script>

@@ -8,17 +8,17 @@ const routes = [
     component: Home,
   },
   {
-    path: "/detail",
+    path: "/detail/:id",
     name: "Detail",
     // lazy-loaded when the route is visited.
-    component: () =>
-      import("../views/Detail.vue"),
+    component: () => import(/* webpackChunkName: "detail" */"../views/Detail.vue"),
+    props:true
   },
 ];
 
 const router = createRouter({
   history: createWebHashHistory(),
-   routes,
+  routes,
 });
 
 export default router;

@@ -1,5 +1,14 @@
 # Tv Shows Database
 
+The application to showcase a list of tv series , categorized by genre they belong to . The shows can also be searched . more Information about a show can be found by clicking its banner.
+
+Following env used for development
+
+1. node v14.15.1
+2. npm v8.4.1
+3. Python 3.2
+4. macos Sierra
+
 ## Project setup
 
 ```
